@@ -72,7 +72,7 @@ body {
     display: none;
 }
 
-/* メインビジュアル */
+/* ホームページメインビジュアル */
 .hero {
     min-height: 85vh;
 
@@ -140,6 +140,144 @@ body {
     text-shadow: 0 0 12px rgba(255, 215, 120, 0.35);
 }
 
+/* ストーリーページのメインビジュアル */
+.story {
+    min-height: 85vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.85)),
+        url("../img/story.png") no-repeat;
+    background-size: 390px auto;
+    background-position: center;
+}
+
+.story::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 55%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 1)
+        );
+
+    pointer-events: none;
+}
+
+.story h1 {
+    margin: 0;
+    font-size: 72px;
+    letter-spacing: 8px;
+    padding-top: 50px;
+
+    background: linear-gradient(
+        180deg,
+        #fff6b0 0%,
+        #f5d76e 50%,
+        #c99a2e 70%,
+        #a4771b 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    text-shadow: 0 0 18px rgba(255, 215, 120, 0.25);
+}
+
+.story p {
+    margin-top: 20px;
+    font-size: 32px;
+    letter-spacing: 5px;
+    font-weight: bold;
+
+    color: #f5d76e;
+    text-shadow: 0 0 12px rgba(255, 215, 120, 0.35);
+}
+
+/* LISTENページのメインビジュアル */
+.listen {
+    min-height: 85vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.85)),
+        url("../img/listen.png") no-repeat;
+    background-size: 390px auto;
+    background-position: center;
+}
+
+.listen::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 55%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 1)
+        );
+
+    pointer-events: none;
+}
+
+.listen h1 {
+    margin: 0;
+    font-size: 72px;
+    letter-spacing: 8px;
+    padding-top: 50px;
+
+    background: linear-gradient(
+        180deg,
+        #fff6b0 0%,
+        #f5d76e 50%,
+        #c99a2e 70%,
+        #a4771b 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    text-shadow: 0 0 18px rgba(255, 215, 120, 0.25);
+}
+
+.listen p {
+    margin-top: 20px;
+    font-size: 32px;
+    letter-spacing: 5px;
+    font-weight: bold;
+
+    color: #f5d76e;
+    text-shadow: 0 0 12px rgba(255, 215, 120, 0.35);
+}
+
 /* 本文 */
 .content {
     padding: 100px 32px;
@@ -149,6 +287,75 @@ body {
 .content h2 {
     font-size: 36px;
     letter-spacing: 5px;
+}
+
+/* LISTENページのアルバム一覧 */
+.albums {
+    padding: 40px 20px 80px;
+}
+
+.album-list {
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.album-card {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.album-image {
+    position: relative;
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto 18px;
+}
+
+.album-image img:first-child {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 24px 45px rgba(0, 0, 0, 0.25);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.album-date {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.album-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 44px;
+    line-height: 0.9;
+    font-weight: normal;
+    margin: 0 0 18px;
+    color: #2a2222;
+}
+
+.album-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #2a2222;
+    font-size: 12px;
+    letter-spacing: 0.55em;
+    font-weight: bold;
+    transition: letter-spacing 0.3s ease, transform 0.3s ease;
+}
+
+/* カーソルを合わせた時のアニメーション */
+.album-card:hover .album-image img:first-child {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 30px 55px rgba(0, 0, 0, 0.32);
+}
+
+.album-card:hover .album-link {
+    letter-spacing: 0.7em;
+    transform: translateX(6px);
 }
 
 /* スマホ・タブレット用 */
@@ -217,7 +424,7 @@ body {
 .fade-in {
     opacity: 0;
     transform: translateY(40px);
-    transition: opacity 2s ease, transform 2s ease;
+    transition: opacity 3s ease, transform 3s ease;
 }
 
 .fade-in.show {
